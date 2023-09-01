@@ -1,0 +1,193 @@
+$night: #141e46;
+$beach: #fff5e0;
+$blood: #bb2525;
+$barbie: #ff6969;
+
+body,
+html {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 1024px;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+    //Login-Register
+    .auth {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: $beach;
+      height: 100vh;
+
+      h1 {
+        color: $night;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 200px;
+        gap: 20px;
+        padding: 50px;
+
+        input {
+          padding: 10px;
+          border: none;
+          border-bottom: 1px solid $night;
+        }
+
+        button {
+          padding: 10px;
+          border: none;
+          background-color: $barbie;
+          color: white;
+          cursor: pointer;
+        }
+
+        span {
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+
+    //Navbar
+    .navbar {
+      .container {
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+          img {
+            width: 80px;
+          }
+        }
+
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          h6 {
+            font-size: 16px;
+            font-weight: 300;
+          }
+
+          span {
+            cursor: pointer;
+          }
+
+          .write {
+            background-color: $barbie;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 300;
+            border: 1px solid white;
+
+            &:hover {
+              color: $blood;
+              background-color: white;
+              border: 1px solid $blood;
+            }
+          }
+        }
+      }
+    }
+
+    //Footer
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $barbie;
+      padding: 10px;
+      margin-top: 100px;
+      color: white;
+      overflow: hidden;
+      img {
+        height: 50px;
+      }
+    }
+
+    //Posts
+    .home {
+      .posts {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+        .post {
+          display: flex;
+          gap: 100px;
+
+          &:nth-child(2n + 1) {
+            flex-direction: row-reverse;
+          }
+
+          .img {
+            flex: 2;
+            position: relative;
+
+            &::after {
+              content: "";
+              width: 100%;
+              height: 100%;
+              background-color: $barbie;
+              position: absolute;
+              top: 20px;
+              left: -20px;
+              z-index: -1;
+            }
+
+            img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+          }
+          .content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+              font-size: 48px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+            button {
+              width: max-content;
+              background-color: white;
+              border: 1px solid $barbie;
+              padding: 10px 20px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $barbie;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
